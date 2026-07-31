@@ -1,0 +1,93 @@
+<div class="vers-manual-wrapper">
+<h1>User Guide</h1>
+<div class="vers-alert vers-alert-info"><i class="material-icons">info_outline</i>
+<div>This User Guide applies to the currently released<strong> PR v9 v10</strong> models. For earlier versions, the User Guide can be found at the corresponding links in the <a href="https://verstest.site/content/category/7-archive" class="vers-desc-btn">Archive.</a></div>
+</div>
+<h2>Purpose</h2>
+<p>Touch probe<strong> PR</strong> is designed to determine the exact coordinates of objects mounted on a CNC milling machine. The CNC system generates these coordinates when the VersPR stylus touches the object and uses them to link the processing program to the workpiece location, to measure lengths, diameters, to search for hole centers, etc.</p>
+<p>The device can be used with various CNC systems: LinuxCNC, Mach3, embedded systems on industrial machines, etc. The device is connected to the CNC system via a cable (see section <a href="#connection" style="color: #52c1a2; text-decoration: none; font-weight: 600;">Connection</a>).</p>
+<h2>PR v10 main features</h2>
+<ol class="vers-list">
+<li>- unidirectional repeatability 0.001 mm.</li>
+<li>- tungsten carbide pin-ball contacts.</li>
+<li>- over travel limit (X,Y) ±10mm, (Z) -7mm.</li>
+</ol>
+<br />Two connector options:
+<ul class="vers-list" style="margin-top: 10px; margin-bottom: 0;">
+<li><strong class="vers-param">Magnetic</strong> - the most convenient jack, suitable for working with plastics and non-ferrous (non-magnetic) metals.</li>
+<li><strong class="vers-param">Waterproof</strong> - for work in humid environments or with steels.</li>
+</ul>
+The probe is equipped with both NPN-NC and PNP-NC output types. Protection against short circuits of the output to power or ground, from power reversal.
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">Specification</h2>
+<div style="margin-bottom: 30px;"><!-- Item 1 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">straighten</i> <span style="font-size: 15px;">Unidirectional repeatability</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">&lt;0.001 mm</span></div>
+</div>
+<!-- Item 2 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">bolt</i> <span style="font-size: 15px;">Power supply</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">+5v...+24v</span></div>
+</div>
+<!-- Item 3 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">control_camera</i> <span style="font-size: 15px;">Search directions</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">±X, ±Y, -Z</span></div>
+</div>
+<!-- Item 4 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">bolt</i> <span style="font-size: 15px;">Current сonsumption</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">&lt;4mA</span></div>
+</div>
+<!-- Item 5 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">settings_overscan</i> <span style="font-size: 15px;">Over travel limit (X,Y)</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">±10 mm</span></div>
+</div>
+<!-- Item 6 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">compress</i> <span style="font-size: 15px;">Contact force X Y</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">min 0.5N max 0.8N</span></div>
+</div>
+<!-- Item 7 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">vertical_align_bottom</i> <span style="font-size: 15px;">Over travel limit (Z)</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">- 7 mm</span></div>
+</div>
+<!-- Item 8 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">download</i> <span style="font-size: 15px;">Contact force in Z</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">2N</span></div>
+</div>
+<!-- Item 9 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">build</i> <span style="font-size: 15px;">Adjustability</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">Yes</span></div>
+</div>
+<!-- Item 10 (С длинным описанием) -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">shield</i> <span style="font-size: 15px;"> Dust &amp; Splash protection <span style="color: #64748b; font-weight: 400; font-size: 12px; margin-top: 4px;">*only for version with waterproof jack</span> </span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">Yes</span></div>
+</div>
+</div>
+<div class="vers-img-wrapper"><img src="/img/manual/vers_pr_man1.jpeg" alt="Vers PR v10" /></div>
+<p class="vers-recommendation">* All sizes are for reference. The diameter of the ball (tip of the stylus) is approximate, in fact it can differ from the specified within ± 0.01 mm, spherical irregularity &lt;0.001 mm.</p>
+<h2>Adjustment</h2>
+<p>It is necessary to adjust the probe before starting the measurement. The probe is installed in the spindle, a check indicator is placed near to it (Fig. 1). The indicator should be sensitive to a weak effect of 0.3-0.5N (for example, most lever indicators have this property). The axis of the spindle is rotated by hand and the amplitude of the deflection of the stylus ball from the axis of rotation is controlled by the indicator.</p>
+<div style="text-align: center; margin: 30px 0 40px 0; width: 100%;"><img src="/img/manual/vers_pr_man2.jpeg" alt="Fig.1. Adjustment" style="height: auto; border: 1px solid #e2e8f0;" /> <span style="text-align: center; margin-top: 15px; color: #64748b; font-style: italic; font-size: 15px;">Fig. 1</span></div>
+<br />
+<p>The deviation is eliminated by turning the adjusting screws with a 2mm hex key from the kit. When adjusting, both tightening and loosening of the screws are used.</p>
+<div class="vers-alert vers-alert-danger"><i class="material-icons">pan_tool</i>
+<div><strong>Important!</strong> It is recommended to hold for a short lever of the key, so as not to develop excessive force. It will be necessary to perform several cycles of spindle axis rotation — control — adjustment in order to achieve a minimum deviation acceptable for a particular measurement.</div>
+</div>
+<h2 id="connection">Connection</h2>
+<p>The sensors are equipped with NPN-NC and PNP-NC outputs, polarity reversal protection, protection against short circuits of the output to power and ground. Both NPN and PNP outputs are built into the device and routed to separate pins.</p>
+<p><strong class="vers-param">Wiring diagram to the machine for the version with magnetic connector</strong> (Vers PR v10 magnetic jack):</p>
+<div class="vers-img-wrapper"><img src="/img/manual/vers_pr_man3.jpeg" alt="Vers PR v10 magnetic jack wiring diagram" /></div>
+<p><strong class="vers-param">Wiring diagram to the machine for the version with waterproof connector</strong> (Vers PR v10 waterproof jack):</p>
+<div class="vers-img-wrapper"><img src="/img/manual/vers_pr_man4.jpeg" alt="Vers PR v10 waterproof jack wiring diagram" /></div>
+<p class="vers-recommendation">The colors of the wires inside the cable from the kit correspond to the colors of the connections on the diagram.</p>
+<h2>Usage</h2>
+<p>There is software <a href="https://verstest.site/content/19-probe-screen-v28" style="color: #52c1a2; font-weight: bold; text-decoration: none;">ProbeScreen</a> in free access for convenient work with probe in the LinuxCNC system.</p>
+<p>And <a href="https://verstest.site/content/12-probe_wizard" style="color: #52c1a2; font-weight: bold; text-decoration: none;">Probe Wizard</a> for work in the Mach3 system.</p>
+<a href="https://verstest.site/39-97-copy-of-vers-pr-v9.html#/7-jack-magnetic" target="_blank" style="color: #52c1a2; font-weight: bold; text-decoration: none; font-size: 18px; font-family: Inter, sans-serif; margin: 20px 0;" rel="noreferrer noopener"> <i class="material-icons" style="margin-right: 8px; font-size: 26px;">play_arrow</i> Buy now </a></div>
