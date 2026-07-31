@@ -1,0 +1,192 @@
+<div class="vers-manual-wrapper">
+<h1>User Manual</h1>
+<div class="vers-alert vers-alert-info"><i class="material-icons">info_outline</i>
+<div>This User Manual applies to the <strong>WLR v9</strong> model. For earlier versions, the User Manual can be found in the <a href="https://verstest.site/content/category/7-archive" class="vers-desc-btn">Archive.</a></div>
+</div>
+<h2>Purpose</h2>
+<p style="margin-bottom: 20px;">The <strong style="color: #1a1c1e;">WLR</strong> wireless rechargeable touch probe is designed to determine the exact coordinates of workpieces mounted on a CNC milling machine using the contact method. The CNC system records these coordinates at the moment the probe stylus touches the part and uses them to link the machining program to the workpiece coordinate system, measure lengths and diameters, find hole centers, etc.</p>
+<p style="margin-bottom: 20px;">The device can be used with LinuxCNC, Mach3, and other CNC systems. Communication between the probe and the receiver is carried out via a 2.4 GHz radio signal; the receiver is then connected to the CNC system via a cable. The transmitter is built into the probe, and the receiver is supplied as a separate device in the kit.</p>
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">WLR v9 Features</h2>
+<ol>
+<li><strong>1. Unidirectional repeatability:</strong> 0.001 mm.</li>
+<li><strong>2. Contacts:</strong> Tungsten carbide ball contacts.</li>
+<li><strong>3. Stylus overtravel:</strong> (X,Y) ±10 mm, (Z) -7 mm.</li>
+<li><strong>4. Power supply:</strong> Uses a rechargeable Li-ion battery LIR2477 3.6V. The voltage across the contacts dynamically increases to 16V for reliable contact closure.</li>
+<li><strong>5. Ultra-low current consumption of the probe:</strong>
+<ul>
+<li>0.4 mA during operation (continuous radio communication);</li>
+<li>0.02 mA in sleep mode;</li>
+<li>0 mA when the power button is turned off.</li>
+</ul>
+<em>Charging frequency with daily use is on average 1-2 times a month, charging time is 1 hour. You can continue using the probe while charging from the receiver. Charging is also possible from any 5V charger. The probe trigger signal can be transmitted via the TYPE-C cable. This can be useful in case of severe radio interference.</em></li>
+<li><strong>6. Vibration sensor:</strong> Allows waking up from sleep mode by shaking or spindle rotation from 200 rpm.</li>
+<li><strong>7. Protection:</strong> Splash (coolant) and dust protection.</li>
+<li><strong>8. Receiver features:</strong>
+<ul>
+<li>- Provides a normally closed connection with the probe (continuous radio communication by receiving short signal packets at a frequency of 2 to 5 times per second). Reliability is ensured by a protocol with acknowledgment and duplication of unacknowledged data.</li>
+<li>- Radio signal delay is 0.75 ms, total delay in the entire chain (from contacts to OUT pin) is 1.5 ms.</li>
+<li>- Radio signal level indication with every stylus deflection.</li>
+<li>- Battery level indication.</li>
+<li>- Automatic search for the best of 16 sub-bands at 2.4 GHz upon power-on or wake-up.</li>
+<li>- Ability to connect the receiver to power supplies in a wide range of +5V...+24V at the input and output.</li>
+<li>- Selectable connection schemes to the CNC controller: NPN-PNP, NC-NO.</li>
+<li>- Input for NPN-NC or NC tool setter.</li>
+<li>- Hardware sleep mode setup via DIP switches.</li>
+<li>- Detector for delays over 1.7 ms and warning output to the ERR pin.</li>
+<li>- LED and sound indication of the probe trigger, LED indication of the error signal.</li>
+<li>- Protection against output short circuits to power or ground, reverse polarity protection.</li>
+</ul>
+</li>
+</ol>
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">Technical Specifications</h2>
+<div style="margin-bottom: 30px;">
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">straighten</i> <span style="font-size: 15px;">Unidirectional repeatability</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">0.001 mm</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">open_with</i> <span style="font-size: 15px;">Search directions</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">±X, ±Y, -Z</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">settings_overscan</i> <span style="font-size: 15px;">Over travel limit (X, Y)</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">±10 mm</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">vertical_align_bottom</i> <span style="font-size: 15px;">Over travel limit (Z)</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">-7 mm</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">compress</i> <span style="font-size: 15px;">Contact force in XY</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">min 0.5N max 0.8N</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">download</i> <span style="font-size: 15px;">Contact force in Z</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">2N</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">timer</i> <span style="font-size: 15px;">Tripped signal delay</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">~ 1.5 ms</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">battery_std</i> <span style="font-size: 15px;">Probe power supply</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">LIR2477 3.6V</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">power</i> <span style="font-size: 15px;">Rechargeable</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">Yes</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">flash_on</i> <span style="font-size: 15px;">Current consumption in operating mode</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">0.4 mA</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">snooze</i> <span style="font-size: 15px;">Current consumption in sleep mode</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">0.02 mA</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">settings_input_component</i> <span style="font-size: 15px;">Receiver power supply</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">+5V...+24V</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">multiline_chart</i> <span style="font-size: 15px;">Receiver current consumption</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 8px 12px; border: 1px solid #e2e8f0; font-size: 14px; text-align: left; line-height: 1.5;">21 mA (5V)<br />14 mA (9V)<br />12 mA (12V)<br />8 mA (24V)</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">settings_input_antenna</i> <span style="font-size: 15px;">Radio channel range</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">6 m</span></div>
+</div>
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px; margin-bottom: 12px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">wifi</i> <span style="font-size: 15px;">Radio frequency</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">2.4 GHz</span></div>
+</div>
+</div>
+<div class="vers-img-wrapper"><img src="/img/manual/vers_wlr9_man1.jpeg" alt="WLR v10" /></div>
+<p style="color: #64748b; font-style: italic; margin-top: 5px;">* All dimensions are for reference. The ball (stylus tip) diameter is indicated approximately; the actual diameter may differ from the indicated one within ±0.01 mm, spherical irregularity &lt; 0.001 mm.</p>
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">Connection</h2>
+<div class="vers-alert vers-alert-info"><i class="material-icons">info_outline</i>
+<div><strong>Startup sequence: </strong>The WLR kit consists of 2 devices: the probe and the receiver. To start, you first need to turn on the receiver, and then the probe.</div>
+</div>
+<div class="vers-alert vers-alert-info"><i class="material-icons">battery_charging_full</i>
+<div><strong>Battery charging: </strong>Turn off the probe and the receiver, connect them with the included USB cable, then turn on the probe, followed by the receiver. Alternatively, you can use any 5V DC power source (e.g., a mobile phone charger) instead of the receiver.</div>
+</div>
+<div class="vers-alert vers-alert-info"><i class="material-icons">cable</i>
+<div><strong>Wired mode operation: </strong>To transmit the probe trigger signal via the TYPE-C cable, turn off the probe and receiver, connect them with the cable, and then turn on <u>only the receiver</u>.</div>
+</div>
+<p>Switch functions and receiver connector pinout.</p>
+<div class="vers-img-wrapper"><img src="/img/manual/vers_wlr9_man2.jpeg" alt="RFM pin" /></div>
+<p><strong style="color: #52c1a2;">"Time before sleep"</strong> sets the interval of probe inactivity, after which the probe will automatically enter Sleep mode 1. Waking up from this sleep mode is done by shaking or rotating the spindle from 200 rpm, but not more than 1500 rpm.</p>
+<p><strong style="color: #52c1a2;">"TS simulate"</strong> If you do not use the TS input, this switch must be turned on. The switch permanently connects the TS input to ground. If you decide to use the TS input, the "TS simulate" switch must be turned off, and the "Storing PARAMETERS" procedure must be performed (see the "SERV" button description below).</p>
+<p><strong style="color: #52c1a2;">"ERR"</strong> is a logic output that indicates excessive delays (more than 1.7 milliseconds). It is accompanied by LED indication on the receiver. It provides the opportunity to cancel an incorrect measurement in the event of a radio channel response delay. A delay occurs when a short communication confirmation packet was still being sent at the moment the stylus was deflected; the delay can be up to 12ms. The probability of such an event depends on the user-defined communication confirmation packet period (poll period): 0.3s - 3.6%, 1s - 1.2%, 3s - 0.4%. The software check of the Error Signal is placed immediately <strong>after</strong> the search G38 (linuxcnc) or G31 (mach3), before the stylus is released; if an Error Signal is detected, it is recommended to perform the measurement again. Alternatively, ERR can be unused; in this case, for complete confidence in the measurement, probe the same spot twice and accept the measurement if both values match within the required accuracy. Also, if a clarifying measurement is performed at a speed of &lt;10 mm/min, the error from the maximum possible delay will be &lt;0.002 mm, which may be sufficient in some cases. ERR is also used to determine the need to wake the probe from Sleep mode 1. For wake-up: in manual mode - shaking; in automatic mode - a software check of the Error Signal is executed <strong>before</strong> the search G38 (linuxcnc) or G31 (mach3), and if an ERR Signal is detected, it is necessary to rotate the spindle at 200 - 1500 rpm. To work with the ERR signal, your CNC controller must have 1 free digital input allocated, which can be read at the program level.</p>
+<p><strong style="color: #52c1a2;">"Buzzer"</strong> activates the sound signal of the probe trigger.</p>
+<p><strong style="color: #52c1a2;">"NC NO"</strong> provides a choice between a normally-closed NC (recommended) and a normally-open NO connection scheme for the output to the controller.</p>
+<p><strong style="color: #52c1a2;">"NPN PNP"</strong> provides a choice between NPN and PNP connection schemes for the output to the controller.</p>
+<p>Using the <strong style="color: #52c1a2;">"NC NO"</strong> and <strong style="color: #52c1a2;">"NPN PNP"</strong> switches, you can select one of the 4 connection schemes for the OUT and ERR outputs to the controller (please note, the controller may have its own power supply voltage limits). Pull-up resistors are already soldered on the receiver outputs, see the diagrams below.</p>
+<div class="vers-img-wrapper"><img src="/img/manual/vers_wlr9_man3.jpeg" alt="rfm_v9_conn_out" /></div>
+<div class="vers-img-wrapper"><img src="/img/manual/vers_wlr9_man4.jpeg" alt="rfm_v9_conn_err" /></div>
+<div class="vers-img-wrapper"><img src="/img/manual/vers_wlr9_man5.jpeg" alt="rfm_res" /></div>
+<p><strong style="color: #52c1a2;">"TS Input"</strong> is used to combine a tool setter (TSm, WTSm, or another third-party NPN-NC or NC type sensor) with the Vers WLR receiver into one common "OUT" output using a logical "OR" scheme, allowing independent shutdown of any sensor (for example, if the WLR "goes to sleep", the TSm will remain operational). The TSm is connected to the WLR as shown in the diagram below and uses the power supply from the WLR in this case; the TSm can also use its own power supply.</p>
+<div class="vers-img-wrapper"><img src="/img/manual/vers_wlr9_man6.jpeg" alt="rfm_v8_ts_conn" /></div>
+<p><strong style="color: #52c1a2;">"SERV" button</strong> - if this button is pressed while turning on the receiver, one of two service procedures is performed:<br />1. "Binding the probe to the receiver" if the probe is connected to the receiver via the TYPE-C cable.<br />2. Writing new "Custom PARAMETERS" if the probe is NOT connected to the receiver via the cable.</p>
+<p><strong>Binding the probe to the receiver</strong><br />The devices are supplied with the binding procedure already performed. This procedure is only needed to bind a receiver and a probe from different kits.</p>
+<ol>
+<li>1. Turn off the receiver, the probe, and all Vers wireless devices located in the same room.</li>
+<li>2. Connect the receiver and the probe to be bound using the included TYPE-C cable.</li>
+<li>3. Erasing flash memory: while holding down the "SERV" button, turn on ONLY the receiver, the probe power button must be OFF. Release the "SERV" button; 2 short buzzer signals will notify you of successful memory erasure. Turn off the receiver. Disconnect the TYPE-C cable. The memory is now cleared in both the receiver and the probe.</li>
+<li>4. Writing new partner information to flash memory: turn on the receiver; 3 short buzzer signals will notify you that the memory has been erased. Turn on the probe. The receiver and probe will connect wirelessly, automatically exchange, and save the partner's information in non-volatile memory upon first power-on.</li>
+</ol>
+<p><strong>Custom PARAMETERS</strong><br />The user can change 3 binary parameters stored in non-volatile flash memory.</p>
+<table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+<thead>
+<tr>
+<th style="text-align: left; padding: 8px; border-bottom: 2px solid #e2e8f0; color: #475569;">PARAMETER</th>
+<th style="text-align: center; padding: 8px; border-bottom: 2px solid #e2e8f0; color: #475569;">Factory settings</th>
+<th style="text-align: left; padding: 8px; border-bottom: 2px solid #e2e8f0; color: #475569;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 12px 8px; border-bottom: 1px solid #e2e8f0; vertical-align: top;"><strong>P1</strong></td>
+<td style="text-align: center; padding: 12px 8px; border-bottom: 1px solid #e2e8f0; vertical-align: top;">1</td>
+<td style="padding: 12px 8px; border-bottom: 1px solid #e2e8f0; vertical-align: top; line-height: 1.5;">Invert (1) or do not invert (0) the state of the OUT pin in the event of transitioning to sleep mode or turning off the probe. This parameter can be set to 1 if you do not plan to connect a tool setter to the TS input; transitioning to sleep mode or turning off the probe will trigger the OUT contact. If you have connected a tool setter to the TS input, P1 must be = 0.</td>
+</tr>
+<tr>
+<td style="padding: 12px 8px; border-bottom: 1px solid #e2e8f0; vertical-align: top;"><strong>P2</strong></td>
+<td style="text-align: center; padding: 12px 8px; border-bottom: 1px solid #e2e8f0; vertical-align: top;">1</td>
+<td style="padding: 12px 8px; border-bottom: 1px solid #e2e8f0; vertical-align: top; line-height: 1.5;">Invert (1) or do not invert (0) the state of the ERR pin in the event of transitioning to sleep mode or turning off the probe. The recommended value for this parameter is 1.</td>
+</tr>
+<tr>
+<td style="padding: 12px 8px; border-bottom: 1px solid #e2e8f0; vertical-align: top;"><strong>P3</strong></td>
+<td style="text-align: center; padding: 12px 8px; border-bottom: 1px solid #e2e8f0; vertical-align: top;">1</td>
+<td style="padding: 12px 8px; border-bottom: 1px solid #e2e8f0; vertical-align: top; line-height: 1.5;">Fast (1) or slow (0) search for the best channel. The slower the search, the more accurate it is. On the other hand, a slow search delays the program loading at startup or wake-up. The recommended value for this parameter is 1.</td>
+</tr>
+</tbody>
+</table>
+<p>To change the parameters:</p>
+<ol>
+<li>1. Turn off the receiver.</li>
+<li><strong>2. Do not connect</strong> the receiver and the probe with the TYPE-C cable.</li>
+<li>3. Set DIP switches 1, 2, and 3 to the required values for parameters P1, P2, and P3 respectively.</li>
+<li>4. Saving to flash memory: holding down the "SERV" button, turn on the receiver, release the "SERV" button; 4 short sound signals will indicate successful saving of new values, and the green LEDs on the indicator will show which parameters have been changed. At this stage, all three parameters are saved at once. Therefore, if you want to change any 1 parameter, make sure to properly set the other two. Turn off the receiver.</li>
+<li>5. Return microswitches 1, 2, and 3 to the desired positions for everyday use (sleep mode and poll mode).</li>
+</ol>
+<h3 style="color: #52c1a2; font-size: 20px; font-weight: bold; margin-bottom: 16px; margin-top: 30px;">LED indication on the probe</h3>
+<p style="margin-bottom: 12px;"><strong>Red LED is on:</strong> stylus is deflected;</p>
+<p style="margin-bottom: 12px;"><strong>Green LED (short repeating pulse):</strong> stylus is released;</p>
+<p style="margin-bottom: 12px;"><strong>Green LED (constantly on or flashes twice a second):</strong> communication with the receiver is lost, it is necessary to restart (off-on) the receiver, and then the probe.</p>
+<p style="margin-bottom: 12px;"><strong>Blue LED is on:</strong> the battery is charging. When the battery is heavily discharged, the blue LED may not turn on immediately, until the dynamic control system restores the charge to a safe minimum level. The blue LED will turn off when the charge level reaches 80%.</p>
+<h3 style="color: #52c1a2; font-size: 20px; font-weight: bold; margin-bottom: 16px; margin-top: 40px;">LED indication on the receiver</h3>
+<p style="margin-bottom: 12px;"><strong>Red LED bar is on:</strong> stylus is deflected, the amount corresponds to the transmitted radio signal level;</p>
+<p style="margin-bottom: 12px;"><strong>Green LED bar is on:</strong> stylus is released, the amount corresponds to the battery charge level;</p>
+<p style="margin-bottom: 12px;"><strong>Light blue LED OUT is on:</strong> indicates the status of the OUT output.</p>
+<p style="margin-bottom: 12px;"><strong>Red LED ERR is on:</strong> indicates the status of the ERR output.</p>
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">Adjustment</h2>
+<p style="margin-bottom: 20px;">Before starting measurements, it is necessary to perform the device adjustment. The device is installed in the spindle, and a test dial indicator is fixed nearby. The indicator must be sensitive to a weak force of 0.3-0.5N (for example, most test indicators have this property). The spindle axis is rotated by hand, and the amplitude of the stylus ball's deviation from the rotation axis is monitored on the indicator.</p>
+<div class="vers-img-wrapper"><img src="/img/manual/vers_wlr9_man7.jpeg" alt="wlr_v8_adj" /></div>
+<p style="margin-bottom: 20px;">The deviation is eliminated by turning the M2.5 adjusting screws (the screws are recessed in the holes) using the included 2mm hex key. Adjustment involves both tightening and loosening the screws. It is recommended to hold the key by the short lever so as not to apply excessive force. It will take several cycles of spindle rotation—monitoring—adjustment to achieve the minimum acceptable deviation for a specific measurement.</p>
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">Usage</h2>
+<p style="margin-bottom: 20px;">The radio channel in Vers WLR simulates a normally closed connection between the probe and the receiver. A broken radio channel is identical to a broken wire, with the only difference being that the reaction to the channel break at the OUT or ERR outputs comes with a delay equal to the poll period (not to be confused with the delay in reaction to the stylus deflection ~1.5ms). The graph below shows the safe probing speed-acceleration combinations (the area with green hatching), under which the machine will stop without breaking the stylus, even in the event of a radio failure at the most "unfortunate" moment when the stylus touches the part. The calculation takes into account a stylus overtravel of 7 mm and a poll period of 0.3 seconds.</p>
+<div class="vers-img-wrapper"><img src="/img/manual/vers_wlr9_man8.jpeg" alt="velocity_accel_wlrV8" /></div>
+<p style="margin-bottom: 20px; line-height: 1.6;">The formula is derived from the initial conditions:<br /><strong>S = 4 mm</strong> — distance of allowable stylus overtravel;<br /><strong>t = 0.33 s</strong> — maximum delay time for detecting a connection loss, after this time deceleration to a full stop begins;<br /><strong>V</strong> — probing speed in mm/min (Y axis on the graph);<br /><strong>a</strong> — acceleration set in the machine settings, in mm/s<sup>2</sup> (X axis on the graph).<br /><span style="color: #64748b;"><em>(Formula used for calculations: <strong>S = 2*V*t - a*(t<sup>2</sup>)/2</strong>)</em></span></p>
+<p style="margin-bottom: 24px; line-height: 1.6; font-size: 16px;">For convenient operation with the probe in the <strong>LinuxCNC</strong> system, the <a href="https://verstest.site/content/19-probe-screen-v28" style="color: #52c1a2; font-weight: bold; text-decoration: none;">ProbeScreen</a> software is freely available; for working in the <strong>Mach3</strong> system — <a href="https://verstest.site/content/12-probe_wizard" style="color: #52c1a2; font-weight: bold; text-decoration: none;">Probe Wizard</a>.</p>
+<a href="https://verstest.site/43-wlr-v10.html" style="color: #52c1a2; font-size: 20px; font-weight: bold; text-decoration: none; margin-top: 8px;"> <i class="material-icons" style="font-size: 28px; margin-right: 6px;">play_arrow</i> Buy </a></div>
