@@ -1,6 +1,146 @@
-Мой первый сайт на GitHub Pages
-  
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide - Vers</title>
+    <style>
+        /* Базовые настройки шрифта и страницы */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            color: #1a202c;
+            display: flex;
+            justify-content: center;
+        }
 
+        /* Контейнер для центрирования контента */
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
 
-  Привет! Это моя первая страница на GitHub Pages
-  Сайт успешно работает!
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        /* Список карточек */
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* 
+         * Стилизация самой карточки. 
+         * Используется тег <a> и display: flex, 
+         * чтобы ВСЯ площадь карточки была кликабельной 
+         */
+        .card {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            padding: 20px 24px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background-color: #ffffff;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Иконка документа слева */
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background-color: #f0fdf4; /* Светло-зеленый фон */
+            border-radius: 8px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .icon-wrapper svg {
+            color: #16a34a; /* Зеленый цвет иконки */
+        }
+
+        /* Текст в карточке */
+        .card-title {
+            font-size: 16px;
+            font-weight: 500;
+            flex-grow: 1; /* Занимает все свободное пространство */
+        }
+
+        /* Стрелка справа */
+        .arrow {
+            color: #16a34a;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>User Guide</h1>
+
+        <div class="card-list">
+            <!-- Карточка 1: WLR v9 -->
+            <a href="link-to-wlr-v9.html" class="card">
+                <div class="icon-wrapper">
+                    <!-- SVG иконка документа -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <span class="card-title">WLR v9</span>
+                <div class="arrow">
+                    <!-- SVG иконка стрелки -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Карточка 2: PR v10 -->
+            <a href="link-to-pr-v10.html" class="card">
+                <div class="icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <span class="card-title">PR v10</span>
+                <div class="arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+            </a>
+            
+            <!-- Добавьте остальные карточки (TSm v10, PR v9) копированием блока <a>...</a> -->
+
+        </div>
+    </div>
+
+</body>
+</html>
