@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WLR v9 User Manual</title>
-    <!-- Загружаем фирменный шрифт -->
+    
+    <!-- Загружаем шрифты и иконки -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
-        /* Базовый фон страницы (светло-серый, чтобы белая карточка выделялась) */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f4f6f8; 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
             padding: 40px 20px;
+            background-color: #f8fafc; /* Светло-серый фон для контраста с карточкой */
+            color: #1a202c;
             display: flex;
             justify-content: center;
         }
@@ -29,17 +32,13 @@
             text-decoration: none;
             color: #52c1a2;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: 15px;
             transition: color 0.2s;
         }
         .back-link:hover { color: #0b9e69; }
         .back-link svg { margin-right: 8px; }
 
-        /* =========================================
-           ВАШИ СТИЛИ ИЗ CSS (vers-manual-wrapper)
-           ========================================= */
-        
         .vers-manual-wrapper {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -52,27 +51,35 @@
             font-size: 15.5px;
         }
 
+        /* Заголовки */
         .vers-manual-wrapper h1 {
             font-size: 32px;
             font-weight: 800;
             color: #1a1c1e;
             margin: 0 0 30px 0;
-            border: none;
-            padding: 0;
         }
 
         .vers-manual-wrapper h2 {
+            font-size: 26px;
             font-weight: 700;
+            color: #1a1c1e;
             margin-top: 45px;
             margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f5f9;
             letter-spacing: -0.5px;
+        }
+
+        .vers-manual-wrapper h3 {
+            font-size: 20px;
+            font-weight: 700;
             color: #52c1a2;
-            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 16px;
         }
 
         .vers-manual-wrapper p {
-            margin-top: 0;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         /* Ссылки внутри текста */
@@ -80,71 +87,181 @@
             color: #52c1a2;
             font-weight: 600;
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: color 0.2s;
         }
         .vers-manual-wrapper a:hover {
             color: #0b9e69;
+            text-decoration: underline;
         }
 
-        /* БЛОК УВЕДОМЛЕНИЯ (Info Alert) */
         .vers-alert {
             display: flex;
             align-items: flex-start;
             padding: 20px 25px;
             border-radius: 16px;
-            margin: 35px 0;
+            margin: 30px 0;
             font-size: 15px;
             line-height: 1.6;
         }
-
         .vers-alert-info {
             background-color: #f0fdfa;
             border: 1px solid #ccfbf1;
             color: #0f766e;
         }
-
-        .vers-alert-info svg {
-            color: #14b8a6;
-            min-width: 24px;
-            height: 24px;
+        .vers-alert i {
+            font-size: 24px;
             margin-right: 15px;
             margin-top: 2px;
         }
+        .vers-alert-info i { color: #14b8a6; }
 
-        .vers-alert-info a {
-            color: #0f766e;
-            text-decoration: underline;
+        .vers-img-wrapper {
+            margin: 30px 0;
+            text-align: center;
         }
-        .vers-alert-info a:hover {
-            color: #0f766e;
-            text-decoration: none;
+        .vers-manual-wrapper img {
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            border: 1px solid #f1f5f9;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
-        /* Списки */
-        .vers-manual-wrapper ul, .vers-manual-wrapper ol {
+        .vers-manual-wrapper ul, 
+        .vers-manual-wrapper ol {
             padding-left: 20px;
             margin-bottom: 30px;
         }
-
         .vers-manual-wrapper li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            color: #1a1c1e;
+        }
+        .vers-manual-wrapper ul li::marker {
+            color: #52c1a2;
+            font-size: 1.2em;
         }
 
-        /* Адаптив для мобилок */
+        .vers-manual-wrapper table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            border: none;
+            background: transparent;
+            margin-bottom: 30px;
+        }
+        .vers-manual-wrapper thead { display: none; }
+        .vers-manual-wrapper table tr {
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+        .vers-manual-wrapper table tr:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(82, 193, 162, 0.15);
+        }
+        .vers-manual-wrapper table td {
+            padding: 18px 25px;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        .vers-manual-wrapper table td:first-child {
+            border-left: 1px solid #e2e8f0;
+            border-radius: 16px 0 0 16px;
+            font-weight: 700;
+            color: #1a1c1e;
+            width: 15%;
+            text-align: center;
+        }
+        .vers-manual-wrapper table td:nth-child(2) {
+            font-weight: 700;
+            color: #52c1a2;
+            width: 15%;
+            text-align: center;
+        }
+        .vers-manual-wrapper table td:last-child {
+            border-right: 1px solid #e2e8f0;
+            border-radius: 0 16px 16px 0;
+            color: #4a5568;
+            font-weight: 400;
+        }
+
+        .tech-spec-row {
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            padding: 16px 20px; 
+            margin-bottom: 12px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: box-shadow 0.2s ease;
+        }
+        .tech-spec-row:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .tech-spec-left {
+            color: #1a1c1e; 
+            font-weight: 600; 
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+        .tech-spec-left i {
+            color: #52c1a2; 
+            font-size: 24px; 
+            margin-right: 12px;
+        }
+        .tech-spec-right {
+            color: #334155; 
+            font-weight: 600; 
+            background: #f8fafc; 
+            padding: 6px 12px; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 8px;
+            font-size: 14px; 
+            text-align: right;
+        }
+
+        /* Кнопка BUY */
+        .buy-btn {
+            display: inline-flex;
+            align-items: center;
+            color: #ffffff !important;
+            background-color: #52c1a2;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 18px !important;
+            font-weight: 700 !important;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(82, 193, 162, 0.3);
+            transition: all 0.3s ease !important;
+        }
+        .buy-btn i { margin-right: 8px; font-size: 24px; }
+        .buy-btn:hover {
+            background-color: #0b9e69;
+            box-shadow: 0 6px 20px rgba(11, 158, 105, 0.4);
+            color: #ffffff !important;
+            text-decoration: none !important;
+            transform: translateY(-2px);
+        }
+
+        /* Адаптив */
         @media (max-width: 768px) {
-            .vers-manual-wrapper {
-                padding: 30px 20px;
-                border-radius: 16px;
-            }
-            .vers-manual-wrapper h1 { font-size: 26px; }
-            .vers-manual-wrapper h2 { font-size: 20px; }
+            .vers-manual-wrapper { padding: 30px 20px; }
+            .tech-spec-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .vers-manual-wrapper table td { display: block; width: 100% !important; text-align: left !important; border: 1px solid #e2e8f0; border-radius: 0; }
+            .vers-manual-wrapper table td:first-child { border-radius: 16px 16px 0 0; border-bottom: none; }
+            .vers-manual-wrapper table td:last-child { border-radius: 0 0 16px 16px; border-top: none; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Кнопка назад на главную -->
+        <!-- Кнопка назад -->
         <a href="index.html" class="back-link">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -153,25 +270,17 @@
             Back to manuals
         </a>
 
-        <!-- Главная карточка с контентом -->
+        <!-- Главный контент -->
         <div class="vers-manual-wrapper">
             <h1>User Manual</h1>
             
-            <!-- Инфо-блок -->
             <div class="vers-alert vers-alert-info">
-                <!-- SVG иконка 'info' -->
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-                <div>
-                    This User Manual applies to the <strong>WLR v9</strong> model. For earlier versions, the User Manual can be found in the <a href="#">Archive</a>.
-                </div>
+                <i class="material-icons">info_outline</i>
+                <div>This User Manual applies to the <strong>WLR v9</strong> model. For earlier versions, the User Manual can be found in the <a href="https://verstest.site/content/category/7-archive">Archive.</a></div>
             </div>
 
             <h2>Purpose</h2>
-            <p>The <strong>WLR</strong> wireless rechargeable touch probe is designed to determine the exact coordinates of workpieces mounted on a CNC milling machine using the contact method. The CNC system records these coordinates at the moment the probe stylus touches the part and uses them to link the machining program to the workpiece coordinate system, measure lengths and diameters, find hole centers, etc.</p>
+            <p>The <strong style="color: #1a1c1e;">WLR</strong> wireless rechargeable touch probe is designed to determine the exact coordinates of workpieces mounted on a CNC milling machine using the contact method. The CNC system records these coordinates at the moment the probe stylus touches the part and uses them to link the machining program to the workpiece coordinate system, measure lengths and diameters, find hole centers, etc.</p>
             <p>The device can be used with LinuxCNC, Mach3, and other CNC systems. Communication between the probe and the receiver is carried out via a 2.4 GHz radio signal; the receiver is then connected to the CNC system via a cable. The transmitter is built into the probe, and the receiver is supplied as a separate device in the kit.</p>
 
             <h2>WLR v9 Features</h2>
@@ -186,10 +295,197 @@
                         <li>0.02 mA in sleep mode;</li>
                         <li>0 mA when the power button is turned off.</li>
                     </ul>
+                    <em>Charging frequency with daily use is on average 1-2 times a month, charging time is 1 hour. You can continue using the probe while charging from the receiver. Charging is also possible from any 5V charger. The probe trigger signal can be transmitted via the TYPE-C cable. This can be useful in case of severe radio interference.</em>
+                </li>
+                <li><strong>Vibration sensor:</strong> Allows waking up from sleep mode by shaking or spindle rotation from 200 rpm.</li>
+                <li><strong>Protection:</strong> Splash (coolant) and dust protection.</li>
+                <li><strong>Receiver features:</strong>
+                    <ul>
+                        <li>Provides a normally closed connection with the probe (continuous radio communication by receiving short signal packets at a frequency of 2 to 5 times per second). Reliability is ensured by a protocol with acknowledgment and duplication of unacknowledged data.</li>
+                        <li>Radio signal delay is 0.75 ms, total delay in the entire chain (from contacts to OUT pin) is 1.5 ms.</li>
+                        <li>Radio signal level indication with every stylus deflection.</li>
+                        <li>Battery level indication.</li>
+                        <li>Automatic search for the best of 16 sub-bands at 2.4 GHz upon power-on or wake-up.</li>
+                        <li>Ability to connect the receiver to power supplies in a wide range of +5V...+24V at the input and output.</li>
+                        <li>Selectable connection schemes to the CNC controller: NPN-PNP, NC-NO.</li>
+                        <li>Input for NPN-NC or NC tool setter.</li>
+                        <li>Hardware sleep mode setup via DIP switches.</li>
+                        <li>Detector for delays over 1.7 ms and warning output to the ERR pin.</li>
+                        <li>LED and sound indication of the probe trigger, LED indication of the error signal.</li>
+                        <li>Protection against output short circuits to power or ground, reverse polarity protection.</li>
+                    </ul>
                 </li>
             </ol>
+
+            <h2>Technical Specifications</h2>
+            <div style="margin-bottom: 40px;">
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">straighten</i> Unidirectional repeatability</div>
+                    <div class="tech-spec-right">0.001 mm</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">open_with</i> Search directions</div>
+                    <div class="tech-spec-right">±X, ±Y, -Z</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">settings_overscan</i> Over travel limit (X, Y)</div>
+                    <div class="tech-spec-right">±10 mm</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">vertical_align_bottom</i> Over travel limit (Z)</div>
+                    <div class="tech-spec-right">-7 mm</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">compress</i> Contact force in XY</div>
+                    <div class="tech-spec-right">min 0.5N max 0.8N</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">download</i> Contact force in Z</div>
+                    <div class="tech-spec-right">2N</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">timer</i> Tripped signal delay</div>
+                    <div class="tech-spec-right">~ 1.5 ms</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">battery_std</i> Probe power supply</div>
+                    <div class="tech-spec-right">LIR2477 3.6V</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">power</i> Rechargeable</div>
+                    <div class="tech-spec-right">Yes</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">flash_on</i> Current consumption in operating mode</div>
+                    <div class="tech-spec-right">0.4 mA</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">snooze</i> Current consumption in sleep mode</div>
+                    <div class="tech-spec-right">0.02 mA</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">settings_input_component</i> Receiver power supply</div>
+                    <div class="tech-spec-right">+5V...+24V</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">multiline_chart</i> Receiver current consumption</div>
+                    <div class="tech-spec-right" style="text-align: left;">21 mA (5V)<br />14 mA (9V)<br />12 mA (12V)<br />8 mA (24V)</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">settings_input_antenna</i> Radio channel range</div>
+                    <div class="tech-spec-right">6 m</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">wifi</i> Radio frequency</div>
+                    <div class="tech-spec-right">2.4 GHz</div>
+                </div>
+            </div>
+
+            <div class="vers-img-wrapper">
+                <!-- Замените ссылку на актуальное изображение, если оно загружено на GitHub Pages -->
+                <img src="https://verstest.site/img/cms/vers_wlr9_man1.jpeg" alt="WLR v9 dimensions" />
+            </div>
+            <p style="color: #64748b; font-size: 14px; text-align: center;">* All dimensions are for reference. The ball (stylus tip) diameter is indicated approximately; the actual diameter may differ from the indicated one within ±0.01 mm, spherical irregularity &lt; 0.001 mm.</p>
+
+            <h2>Connection</h2>
             
-            <p><em>Charging frequency with daily use is on average 1-2 times a month, charging time is 1 hour. You can continue using the probe while charging from the receiver. Charging is also possible from any 5V charger.</em></p>
+            <div class="vers-alert vers-alert-info">
+                <i class="material-icons">info_outline</i>
+                <div><strong>Startup sequence: </strong>The WLR kit consists of 2 devices: the probe and the receiver. To start, you first need to turn on the receiver, and then the probe.</div>
+            </div>
+            <div class="vers-alert vers-alert-info">
+                <i class="material-icons">battery_charging_full</i>
+                <div><strong>Battery charging: </strong>Turn off the probe and the receiver, connect them with the included USB cable, then turn on the probe, followed by the receiver. Alternatively, you can use any 5V DC power source (e.g., a mobile phone charger) instead of the receiver.</div>
+            </div>
+            <div class="vers-alert vers-alert-info">
+                <i class="material-icons">cable</i>
+                <div><strong>Wired mode operation: </strong>To transmit the probe trigger signal via the TYPE-C cable, turn off the probe and receiver, connect them with the cable, and then turn on <u>only the receiver</u>.</div>
+            </div>
+
+            <p>Switch functions and receiver connector pinout.</p>
+            <div class="vers-img-wrapper">
+                <img src="https://verstest.site/img/cms/vers_wlr9_man2.jpeg" alt="RFM pin" />
+            </div>
+
+            <p><strong style="color: #52c1a2;">"Time before sleep"</strong> sets the interval of probe inactivity, after which the probe will automatically enter Sleep mode 1. Waking up from this sleep mode is done by shaking or rotating the spindle from 200 rpm, but not more than 1500 rpm.</p>
+            <p><strong style="color: #52c1a2;">"TS simulate"</strong> If you do not use the TS input, this switch must be turned on. The switch permanently connects the TS input to ground. If you decide to use the TS input, the "TS simulate" switch must be turned off, and the "Storing PARAMETERS" procedure must be performed (see the "SERV" button description below).</p>
+            <p><strong style="color: #52c1a2;">"ERR"</strong> is a logic output that indicates excessive delays (more than 1.7 milliseconds). It is accompanied by LED indication on the receiver. It provides the opportunity to cancel an incorrect measurement in the event of a radio channel response delay.</p>
+            <p><strong style="color: #52c1a2;">"Buzzer"</strong> activates the sound signal of the probe trigger.</p>
+            <p><strong style="color: #52c1a2;">"NC NO"</strong> provides a choice between a normally-closed NC (recommended) and a normally-open NO connection scheme for the output to the controller.</p>
+            <p><strong style="color: #52c1a2;">"NPN PNP"</strong> provides a choice between NPN and PNP connection schemes for the output to the controller.</p>
+
+            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/rfm_v9_conn_out.jpeg" alt="Connection OUT" /></div>
+            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/rfm_v9_conn_err.jpeg" alt="Connection ERR" /></div>
+            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/rfm_res.jpeg" alt="Resistors" /></div>
+
+            <p><strong style="color: #52c1a2;">"TS Input"</strong> is used to combine a tool setter (TSm, WTSm, or another third-party NPN-NC or NC type sensor) with the Vers WLR receiver into one common "OUT" output using a logical "OR" scheme.</p>
+            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/rfm_v8_ts_conn.jpeg" alt="TS Connection" /></div>
+
+            <p><strong style="color: #52c1a2;">"SERV" button</strong> - if this button is pressed while turning on the receiver, one of two service procedures is performed:<br />1. "Binding the probe to the receiver" if the probe is connected to the receiver via the TYPE-C cable.<br />2. Writing new "Custom PARAMETERS" if the probe is NOT connected to the receiver via the cable.</p>
+
+            <h3>Binding the probe to the receiver</h3>
+            <ol>
+                <li>Turn off the receiver, the probe, and all Vers wireless devices located in the same room.</li>
+                <li>Connect the receiver and the probe to be bound using the included TYPE-C cable.</li>
+                <li>Erasing flash memory: while holding down the "SERV" button, turn on ONLY the receiver. Release the "SERV" button; 2 short buzzer signals will notify you. Turn off the receiver. Disconnect the TYPE-C cable.</li>
+                <li>Writing new partner information to flash memory: turn on the receiver; 3 short buzzer signals will notify you that the memory has been erased. Turn on the probe.</li>
+            </ol>
+
+            <h3>Custom PARAMETERS</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>P1</td>
+                        <td>1</td>
+                        <td>Invert (1) or do not invert (0) the state of the OUT pin in the event of transitioning to sleep mode or turning off the probe. Set to 1 if you do not plan to connect a tool setter to the TS input.</td>
+                    </tr>
+                    <tr>
+                        <td>P2</td>
+                        <td>1</td>
+                        <td>Invert (1) or do not invert (0) the state of the ERR pin. The recommended value is 1.</td>
+                    </tr>
+                    <tr>
+                        <td>P3</td>
+                        <td>1</td>
+                        <td>Fast (1) or slow (0) search for the best channel. The recommended value is 1.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>LED indication on the probe</h3>
+            <ul>
+                <li><strong>Red LED is on:</strong> stylus is deflected;</li>
+                <li><strong>Green LED (short repeating pulse):</strong> stylus is released;</li>
+                <li><strong>Green LED (flashes twice a second):</strong> communication lost, restart receiver then probe;</li>
+                <li><strong>Blue LED is on:</strong> the battery is charging.</li>
+            </ul>
+
+            <h3>LED indication on the receiver</h3>
+            <ul>
+                <li><strong>Red LED bar is on:</strong> stylus is deflected;</li>
+                <li><strong>Green LED bar is on:</strong> battery charge level;</li>
+                <li><strong>Light blue LED OUT is on:</strong> status of the OUT output;</li>
+                <li><strong>Red LED ERR is on:</strong> status of the ERR output.</li>
+            </ul>
+
+            <h2>Adjustment</h2>
+            <p>Before starting measurements, it is necessary to perform the device adjustment. The device is installed in the spindle, and a test dial indicator is fixed nearby. The indicator must be sensitive to a weak force of 0.3-0.5N.</p>
+            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/wlr_v8_adj.jpeg" alt="Adjustment" /></div>
+            <p>The deviation is eliminated by turning the M2.5 adjusting screws using the included 2mm hex key. Adjustment involves both tightening and loosening the screws.</p>
+
+            <h2>Usage</h2>
+            <p>The radio channel in Vers WLR simulates a normally closed connection between the probe and the receiver. The graph below shows the safe probing speed-acceleration combinations.</p>
+            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/velocity_accel_wlrV8.jpeg" alt="Velocity Graph" /></div>
+
+            <p>For convenient operation with the probe in the <strong>LinuxCNC</strong> system, the <a href="https://verstest.site/content/19-probe-screen-v28">ProbeScreen</a> software is freely available; for working in the <strong>Mach3</strong> system — <a href="https://verstest.site/content/12-probe_wizard">Probe Wizard</a>.</p>
+
+            <!-- Кнопка покупки -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://verstest.site/43-wlr-v10.html" class="buy-btn">
+                    <i class="material-icons">shopping_cart</i> Buy WLR v9
+                </a>
+            </div>
+
         </div>
     </div>
 
